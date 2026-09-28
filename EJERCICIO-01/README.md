@@ -52,5 +52,8 @@ El archivo principal del ejercicio es `backend/src/hola/hola.controller.ts`.
 
 ## Entrega
 
-Pendiente de subir el repositorio a GitHub y comprobar allí el commit
-`Ejercicio 01 - Hello Backend`.
+Repositorio: https://github.com/gaabsito/C01-NEST-RN-CONEXION-API
+
+Ejercicio subido a la rama `main` con el commit `Ejercicio 01 - Hello Backend`.
+Compilación y comprobaciones del proyecto correctas; `GET /hola` devuelve HTTP 200
+con el mensaje personalizado y `curso: "DAM"`.
