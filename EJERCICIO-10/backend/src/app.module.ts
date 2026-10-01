@@ -1,0 +1,38 @@
+import { MascotasController } from './mascotas/mascotas.controller.js';
+import { MascotasService } from './mascotas/mascotas.service.js';
+import { Module } from '@nestjs/common';
+import { createObserveModule } from '@nestjs/observe';
+import { AppController } from './app.controller.js';
+import { AppService } from './app.service.js';
+import { MensajeController } from './mensaje/mensaje.controller.js';
+import { ProductosController } from './productos/productos.controller.js';
+import { ProductosService } from './productos/productos.service.js';
+import { HeroesController } from './heroes/heroes.controller.js';
+import { HeroesService } from './heroes/heroes.service.js';
+export const { ObserveModule, ObserveInstrument } = createObserveModule();
+
+@Module({
+  imports: [
+    // Distributed tracing, auto-correlated logs, request/job metrics, error
+    // telemetry, alarms, and more — out of the box. Sign up at https://observe.nestjs.com
+    ObserveModule.forRoot({
+      appKey: 'YOUR_APP_KEY',
+      appSecret: 'YOUR_APP_SECRET',
+      serviceId: 'backend',
+    }),
+  ],
+controllers: [
+  MascotasController,
+  AppController,
+  MensajeController,
+  ProductosController,
+  HeroesController,
+],
+providers: [
+  MascotasService,
+  AppService,
+  ProductosService,
+  HeroesService,
+],
+})
+export class AppModule {}
