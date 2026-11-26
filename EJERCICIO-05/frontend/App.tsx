@@ -5,7 +5,9 @@ import {
   SafeAreaView,
 } from 'react-native-safe-area-context';
 
-const API_URL = 'http://localhost:3015';
+// In Expo Go, set this in .env.local to the Mac's local IP address.
+const API_URL =
+  process.env.EXPO_PUBLIC_API_URL?.replace(/\/+$/, '') ?? 'http://localhost:3015';
 
 export default function App() {
   const [mensaje, setMensaje] = useState('Pulsa el botón para conectar');
